@@ -1,0 +1,125 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: url('https://i.pinimg.com/736x/a7/06/be/a706be54dac00fc33d7e80a825ddacd8.jpg')
+    no-repeat center center/cover;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Agar fon rasm biroz qorong‘i bo‘lishini xohlasang: */
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* oq opak overlay, istasang kamaytir yoki o‘zgartir */
+  pointer-events: none;
+  z-index: 0;
+}
+
+.app-container {
+  position: relative;
+  z-index: 1; /* overlay ostida qolmaslik uchun */
+}
+
+
+h1 {
+  font-size: 1.6rem;
+  margin-bottom: 25px;
+  color: #6aff00;
+  text-shadow: 0 0 8px rgb(64, 230, 255);
+}
+
+.converter-box {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.currency-block {
+  background: rgb(94, 255, 0);
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: 0 0 12px rgb(64, 255, 249);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 160px;
+  transition: 0.3s;
+}
+
+.currency-block:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 18px rgb(64, 255, 77);
+}
+
+.currency-block input,
+.currency-block select {
+  margin: 8px 0;
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  border: 2px solid #0080ff;
+  border-radius: 10px;
+  outline: none;
+  background: #fff;
+  transition: 0.2s;
+}
+
+.currency-block input:focus,
+.currency-block select:focus {
+  border-color: #e91e63;
+  box-shadow: 0 0 8px rgba(233, 30, 99, 0.6);
+}
+
+#result {
+  margin-top: 15px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #ff4081;
+  text-shadow: 0 0 6px rgba(255, 64, 129, 0.5);
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 15px;
+  background: linear-gradient(135deg, #f2ff00, #ff4d00);
+  color: rgb(255, 255, 255);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 12px rgb(0, 204, 255);
+}
+
+/* Floating Animation */
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
